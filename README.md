@@ -1,6 +1,8 @@
 # NTNU_import_magic's  Codebook
 The codebook repository for team NTNU_import_magic. Furthur tutorial of LaTeX and detailed information is currently WIP. 
 
+Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the template of this codebook.
+
 # Install
 
 - Download and Install *[思源黑體](https://www.beforafter.org/blog/source-han-sans-font)*

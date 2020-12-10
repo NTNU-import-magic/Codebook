@@ -6,11 +6,10 @@
 using namespace std;
 using ll = long long;
 using llu = long long unsigned;
-using pii = pair<int,int>;
-/************************/
+using pii = pair<int, int>;
 
-int main(){
-	//Main Code
-
-	return 0;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    return 0;
 }

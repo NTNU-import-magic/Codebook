@@ -5,7 +5,7 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
 
 # Install
 
-- Download and Install *[思源黑體](https://www.beforafter.org/blog/source-han-sans-font)*
+- Download and Install *思源黑體*
 
   ```bash
    cd ~/Desktop/
@@ -13,6 +13,12 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
    sudo unzip NotoSansCJKtc-hinted.zip -d /usr/share/fonts/Noto\ Sans\ CJK\ TC/
    # Do environment specific installation
   ```
+
+  - Arch Linux
+
+    ```bash
+    sudo pacman -S noto-fonts-cjk
+    ```
 
 - Download and Install *Consolas*
 
@@ -29,6 +35,12 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
     ```bash
     sudo apt install fonts-firacode
     ```
+  
+  - Arch Linux
+
+    ```bash
+    sudo pacman -S ttf-fira-code
+    ```
 
   - Mac OS X
 
@@ -41,18 +53,26 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
 
 ## Linux
 
-```bash
- sudo apt-get -y install 	texlive \
- 				texlive-full \
- 				gedit-latex-plugin \
- 				texlive-fonts-recommended \
- 				latex-beamer \
- 				texpower \
- 				texlive-pictures \
- 				texlive-latex-extra \
- 				texpower-examples \
- 				imagemagick
-```
+- Ubuntu
+
+  ```bash
+  sudo apt-get -y install 	texlive \
+          texlive-full \
+          gedit-latex-plugin \
+          texlive-fonts-recommended \
+          latex-beamer \
+          texpower \
+          texlive-pictures \
+          texlive-latex-extra \
+          texpower-examples \
+          imagemagick
+  ```
+
+- Arch linux
+
+  ```bash
+  sudo pacman -S texlive-most texlive-langchinese
+  ```
 
 ## Mac OS X(x86)
 

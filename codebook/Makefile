@@ -7,10 +7,13 @@ else
 XELATEX=xelatex
 endif
 
-BUILD_DIR := $(shell [ -d build ] || mkdir build; echo build)
-LATEXFLAGS = -output-directory=$(BUILD_DIR)
-
 all: codebook.pdf
+
+BUILD_DIR := $(shell [ -d build ] && echo build || (mkdir build && echo build || echo error))
+LATEXFLAGS := -output-directory=$(BUILD_DIR)
+ifeq ($(BUILD_DIR), error)
+$(error Cannot establish build dir)
+endif
 
 codebook.pdf: main.tex content.tex
 	$(XELATEX) $(LATEXFLAGS) main.tex
@@ -18,11 +21,11 @@ codebook.pdf: main.tex content.tex
 	cp $(BUILD_DIR)/main.pdf ./codebook.pdf
 
 autoOpenPdf: codebook.pdf
-ifeq ($(UNAME_S), Linux)
-	xdg-open ./codebook.pdf
-else ifeq ($(UNAME_S), Darwin)
-	open ./codebook.pdf
-endif
+	ifeq ($(UNAME_S), Linux)
+		xdg-open ./codebook.pdf
+	else ifeq ($(UNAME_S), Darwin)
+		open ./codebook.pdf
+	endif
 
 clean:
-	rm -f codebook.pdf
+	rm -rf build codebook.pdf 

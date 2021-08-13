@@ -1,4 +1,4 @@
-.PHONY: codebook.pdf autoOpenPdf clean
+.PHONY: codebook.pdf clean
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), Darwin)
@@ -19,13 +19,6 @@ codebook.pdf: main.tex content.tex
 	$(XELATEX) $(LATEXFLAGS) main.tex
 	$(XELATEX) $(LATEXFLAGS) main.tex
 	cp $(BUILD_DIR)/main.pdf ./codebook.pdf
-
-autoOpenPdf: codebook.pdf
-	ifeq ($(UNAME_S), Linux)
-		xdg-open ./codebook.pdf
-	else ifeq ($(UNAME_S), Darwin)
-		open ./codebook.pdf
-	endif
 
 clean:
 	rm -rf build codebook.pdf 

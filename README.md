@@ -46,7 +46,7 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
 
     ```bash
     brew tap homebrew/cask-fonts
-    brew cask install font-fira-code
+    brew install --cask font-fira-code
     ```
 
     
@@ -79,7 +79,7 @@ Special thanks to [NCTU_Fox](https://github.com/NCTU-PCCA/NCTU_Fox) for the temp
 - Insall MacTex & rubber
 
   ```bash
-  brew cask install mactex
+  brew install --cask mactex-no-gui
   ```
 
 # Build

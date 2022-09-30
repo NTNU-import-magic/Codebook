@@ -1,0 +1,121 @@
+\subsection{Basic IO}
+    \lstinputlisting{java/basic_io.java}
+\subsection{Fast Input}
+    \lstinputlisting{java/fast_input.java}
+\subsection{java.lang.String}
+    \subsubsection{Constructor}
+        \lstinline[language=Java]{String(String original)}\\
+        Initializes a newly created String object that is a copy of the argument string.
+
+        \noindent
+        \lstinline[language=Java]{String(StringBuffer buffer)}\\
+        Allocates a new string that contains the sequence of characters currently contained in the string buffer argument.
+
+        \noindent
+        \lstinline[language=Java]{String(StringBuilder builder)}\\
+        Allocates a new string that contains the sequence of characters currently contained in the string builder argument.
+    \subsubsection{Methods}
+        \lstinline[language=Java]{boolean equals(Object anObject)}\\
+        只當參數非空且字串內字元組成相等才回傳true。
+
+        \noindent
+        \lstinline[language=Java]{int compareTo(String anotherString)}\\
+        回傳字典序比較結果(以UTF-8編碼比較)\\
+        負數: 參數<this\\
+        正數: 參數>this\\
+        0: 相等
+
+        \noindent
+        \lstinline[language=Java]{boolean isEmpty()}
+        
+        \noindent
+        \lstinline[language=Java]{int length()}
+
+        \noindent
+        \lstinline[language=Java]{int indexOf(String str, int fromIndex)}\\
+        Returns the index within this string of the \textbf{first occurrence} of the specified character/substring.
+
+        \noindent
+        \lstinline[language=Java]{char charAt(int index)}\\
+        Returns the char value at the specified index. An index ranges starts from 0.
+
+        \noindent
+        \lstinline[language=Java]{String concat(String str)}\\
+        回傳相接後的字串
+
+        \noindent
+        \lstinline[language=Java]{String replace(char oldChar, char newChar)}
+
+        \noindent
+        \lstinline[language=Java]{String toLowerCase()}
+
+        \noindent
+        \lstinline[language=Java]{String toUpperCase()}
+
+        \noindent
+        \lstinline[language=Java]{String trim()}\\
+        Returns a copy of the string, with leading and trailing whitespace omitted.
+
+        \noindent
+        \lstinline[language=Java]{String toString()}\\
+        this string itself.
+
+
+        \noindent
+        \lstinline[language=Java]{String[] split(String regex)}\\
+        return string array that seperate original string by given regex.
+
+\subsection{BigInteger \& Big Decimal}
+
+    \subsubsection{Static}
+        \begin{itemize}
+        \item \lstinline{BigInteger} \& \lstinline{BigDecimal}\\
+        ONE / TEN / ZERO
+        \item \lstinline{BigDecimal} (type is int)\\
+        ROUND\_CEILING -> $+\infty$\\
+        ROUND\_FLOOR -> $-\infty$\\
+        ROUND\_DOWN -> $0$ (to)\\
+        ROUND\_UP <- $0$ (away)\\
+        ROUND\_HALF\_DOWN / ROUND\_HALF\_UP -> nearest -> down/ up\\
+        ROUND\_UNNECESSARY assert no round needed\\
+        \end{itemize}
+    \subsubsection{Static Method}
+        \lstinline{BigInt/BigDecimal valueOf(long/\[double\] val)} 只有BigDecimal能傳double
+
+    \subsubsection{Constructor}
+        \lstinline{BigInteger/BigDecimal(String val)}
+        \lstinline{BigDecimal(int/long/double val)}
+
+    \subsubsection{Similar Method}
+        \lstinline{int compareTo(BigInteger val)} -1, 0, 1 是指 <, =, >\\
+        \lstinline{boolean equals(Object val)} numerical equal\\
+        \lstinline{double doubleValue()}, \lstinline{int intValue()}\\
+        \lstinline{String toString()}\\
+        \lstinline{abs / negate()}\\
+        \lstinline{min / max(BigInteger/BigDecimal val)}\\
+        \lstinline{add/substract/multiply(BigInteger/BigDecimal val)}\\
+        \lstinline{pow(BigInteger/BigDecimal val)} this\^val\\
+        \lstinline{BigInteger/BigDecimal[] divideAndRemainder(BigInteger/BigDecimal val)}\\
+        \lstinline{int signum()}\\
+
+    \subsubsection{BigInteger Method}
+        \lstinline{and / andNot / or / xor (BigInteger val)} bitwise operate\\
+        \lstinline{not()} not bitwise operate\\
+        \lstinline{shiftLeft / shiftRight (int n)} bitwise shift\\
+        \lstinline{gcd(BigInteger val)}\\
+        \lstinline{divide/mod(BigInteger val)}\\
+        \lstinline{boolean isProbablePrime(int certainty)} rabin-miller\\
+        \lstinline{modInverse(BigInteger m)} ($this^{-1} \mod m$)\\
+        回傳一個\lstinline{BigInteger[]}含有 (this / val) (this \% val)\\\
+        
+    \subsubsection{BigDecimal Method}
+        \lstinline{divide(BigDecimal divisor)} if the exact quotient cannot be represented an `ArithmeticException` is thrown.\\
+        \lstinline{divide(BigDecimal divisor, int roundingMode)} divide with rounding mode\\
+        \lstinline{plus()} ++this\\
+        \lstinline{int scale()} return scale\\
+        \lstinline{setScale(int newScale)}\\
+        \lstinline{setScale(int newScale, int roundingMode)}\\
+        \lstinline{BigInteger toBigInteger[Exact]()}\\
+        \lstinline{int/longValue[Exact]()}\\
+        \textbf{Method End with "Exact" 會在分數部分非零時拋出算術例外}\\
+    

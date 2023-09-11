@@ -23,8 +23,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Build PDF
         uses: xu-cheng/latex-action@v3
         with:

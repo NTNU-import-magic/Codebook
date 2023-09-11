@@ -28,7 +28,6 @@ jobs:
           working_directory: codebook/
           root_file: 
             main.tex
-            content.tex
           latexmk_use_xelatex: true
       - name: Commit PDF
         uses: stefanzweifel/git-auto-commit-action@v4

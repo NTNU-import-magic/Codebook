@@ -1,3 +1,4 @@
+// Biconnected Component
 void dfs(int u,int pa=-1){//u當前點，pa父親 
     int v,child=0;
     low[u]=vis[u]=++Time;
